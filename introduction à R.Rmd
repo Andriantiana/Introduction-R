@@ -1,0 +1,59 @@
+---
+title: "Introduction au langage R"
+output:
+  html_document:
+    df_print: paged
+---
+### Introduction
+
+Ca y est!
+
+Vous avez décidé de vous lancer dans l'apprentissage d'un langage de programmation adatpé aux statistiques. Vous êtes tombé sur un langage appelé R mais ne savez pas quoi faire. Peut-être même que vous avez décidé de le télécharger, si ce n'est pas encore le cas je vous invite fortement à le faire <a href = "https://cran.r-project.org/bin/windows/base/">ici </a>.
+
+Ce n'est pas obligatoire mais RStudio offre une meilleure aisance que ce soit pour écrire nos instructions(et nous allons le faire souvent) que pour visualiser nos résultats. Vous pouvez télécharger RStudio <a href = "https://rstudio.com/products/rstudio/download/#download">ici</a>. Installez R puis RStudio(nécéssite des droits administrateur).
+
+Dans la suite, je supposerai que vous avez également installé RStudio et toutes mes remarques également bien que cela marche aussi(la plupart du temps) si vous travaillez avec la console R.
+
+
+Passons maintenant aux choses sérieuses, si vous avez ouvert unne sessions RStudio vous devriez voir 3 fenêtres. A gauche, vous apercevez un texte et à la fin du texte un chevron comme ça: > .Ce chevron s'appelle le prompt et si vous cliquez après vous obtenez une petite barre verticale qui clignote. C'est le signe que R est prêt à recevoir vos ordres, encore faut-il savoir quoi et comment lui dire ce que vous voulez.
+
+Sachez tout d'abord que R est une supercalculatrice. Tapez ceci après le prompt puis sur la touche "Entrer"
+
+
+```{r}
+65 + 98
+```
+Vous apercevez le résultat qui s'affiche dans RStudio en bas de la ligne que vous avez tapé. C'est 168 qui est un résultat exact je vous le ferai remarquer.
+
+Mais R peut faire beaucoup plus, essayez donc ça:
+```{r}
+2*pi*4
+```
+Et oui, R connait le nombre $\pi$ (à quelques décimales près).
+
+Mais vous vous en doutez R nous permet de réaliser des choses encore plus étonnantes encore.
+
+
+### Le monde des variables
+
+Vous avez vu que R peut faire de supers calculs. Mais la plupart du temps ce que nous voulons c'est garder ces résultats pour pouvoir les utiliser plus tard. R nous autorise à faire ça de la manière suivante:(la flèche est composée des touche "inférieur à" et "tiré 6"ou du signe moins -)
+```{r}
+perimetre <- 2*pi*4
+```
+Vous l'aurez remarqué, rien ne s'est affiché après avoir tapé sur la touche "Entrer". R aurait-il oublié de nous donner la réponse? En réalité R a bien fait le calcul mais pour ne pas nous embêter, il l'a stocké en mémoire. Si vous voulez le connaitre, il suffit de taper:
+Analysons ce qui vient de se passer. 
+```{r}
+perimetre
+```
+Vous avez votre réponse. En fait, vous avez créer ce qu'on appelle une variable. Une variable sert à stocker une information, comme un résultat de calcul.
+
+Petit point de terminologie: lorsqu'on crée une variable on dit qu'on la "déclare" et quand on stocke une information dans cette variable on dit qu'on l'assigne à cette variable.
+
+Nous avons donc assigné 2x$\pi$x4 à la variable "perimetre". Les variables nous facilitent grandement la vie, par exemple, que vaut la moitié du périmètre de notre cercle, facile:
+```{r}
+perimetre/2
+```
+Nous n'avons pas eu à réécrire toute la formule pour obtenir le résultat que nous aurions pu stocké dans une variable également:
+```{r}
+demi_perimetre <- perimetre/2
+```
